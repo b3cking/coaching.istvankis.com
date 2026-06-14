@@ -325,6 +325,7 @@ body.menu-open .nav-toggle span::after  { transform: translate(-50%, 0) rotate(-
 }
 .hero h1 { margin-bottom: 22px; }
 .hero h1 .accent { color: var(--brand-600); font-style: italic; }
+.hero h1 .h1-soft { display: block; margin-top: 0.72em; font-size: 0.62em; font-weight: 500; color: var(--ink-2); }
 .hero .lead { max-width: 30em; margin-bottom: 18px; }
 .hero-subtext { max-width: 33em; margin-bottom: 30px; }
 .hero-subtext p { font-size: 0.95rem; line-height: 1.62; color: var(--ink-2); margin: 0 0 0.65rem; }
