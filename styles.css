@@ -981,6 +981,8 @@ body.menu-open .menu-backdrop { opacity: 1; visibility: visible; }
 
   .cards { grid-template-columns: 1fr; gap: 18px; }
   .card-featured { grid-template-columns: 1fr; gap: 26px; padding: 30px 24px; }
+  /* A hosszú CTA-szöveg ne lógjon ki a kártyából keskeny kijelzőn. */
+  .card-featured__main .btn { width: 100%; white-space: normal; text-align: center; }
   .cards-secondary { grid-template-columns: 1fr; }
   .why-grid { grid-template-columns: 1fr; }
   .steps { grid-template-columns: 1fr; gap: 24px; }
