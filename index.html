@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Progresszív enhancement: a scroll-animációk csak JS mellett aktívak; enélkül minden tartalom látszik. -->
   <script>document.documentElement.classList.add("js");</script>
   <title>Coaching | Istvan Kis</title>
   <meta name="description" content="Vezetői és üzleti coaching döntéshozóknak és szakembereknek — 15+ év vezetői tapasztalattal, ICF coachképzésben lévő coachként. Ingyenes ismerkedő beszélgetés. Online és Budapesten.">
@@ -360,13 +359,7 @@
       </div>
     </section>
 
-    <!--
-    ============================================================
-      VÉLEMÉNYEK — KÉSZ SABLON (jelenleg kikommentezve)
-      Amint van 2-3 valódi ügyfélvéleményed, töröld ki ezt a
-      komment-jelölést (<!- - és - ->), és írd be a saját szövegeket.
-      Fontos: csak VALÓDI, engedéllyel közölt véleményeket tegyél ki.
-    ============================================================
+    <!-- ========================= VÉLEMÉNYEK (sablon) =========================
     <section class="section section--cream2" id="velemenyek">
       <div class="container">
         <div class="section-head center">
@@ -488,7 +481,6 @@
             </figure>
           </div>
 
-          <!-- Formspree űrlap bekötve. Az üzenetek a Formspree-fiókhoz tartozó e-mail-címre érkeznek. -->
           <form class="contact-form reveal" data-delay="1" id="contactForm" action="https://formspree.io/f/mlgkaake" method="POST" novalidate>
             <input type="hidden" name="_subject" value="Új coaching megkeresés – coaching.istvankis.com">
             <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
@@ -585,7 +577,6 @@
 
   <script src="script.js"></script>
 
-  <!-- Cal.com beágyazott időpontfoglaló: a data-cal-link gombokra kattintva popup/overlay nyílik -->
   <script type="text/javascript">
     (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
     Cal("init", "coaching", { origin: "https://cal.com" });

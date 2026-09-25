@@ -9,7 +9,6 @@
   var navLinksEl = document.getElementById("navLinks");
   var backdrop = document.getElementById("menuBackdrop");
 
-  /* A backdrop a CSS láthatóságával működik, nem a hidden attribútummal. */
   if (backdrop) backdrop.removeAttribute("hidden");
 
   /* ---------- Sticky header: háttér scrollra ---------- */
@@ -39,7 +38,6 @@
   if (navToggle) navToggle.addEventListener("click", toggleMenu);
   if (backdrop) backdrop.addEventListener("click", closeMenu);
 
-  /* Menü bezárása linkre kattintva + Escape-re */
   if (navLinksEl) {
     navLinksEl.addEventListener("click", function (e) {
       if (e.target.closest("a")) closeMenu();
@@ -48,7 +46,6 @@
   document.addEventListener("keydown", function (e) {
     if (e.key === "Escape" && document.body.classList.contains("menu-open")) closeMenu();
   });
-  /* Ablakméret-váltáskor (mobilról desktopra) zárjuk a menüt */
   window.addEventListener("resize", function () {
     if (window.innerWidth > 760) closeMenu();
   });
@@ -108,7 +105,6 @@
       }
     });
   });
-  /* Ablakméret-váltáskor a nyitott válasz magasságának frissítése */
   window.addEventListener("resize", function () {
     document.querySelectorAll(".faq-item.open .faq-a").forEach(function (ans) {
       ans.style.maxHeight = ans.scrollHeight + "px";
@@ -119,14 +115,11 @@
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  /* ---------- Cal.com időpontfoglaló popup ----------
-     A foglalós linkeknél (data-cal-link) magunk nyitjuk meg a Cal modalt (overlay)
-     az API-n keresztül — így minden elemnél megbízhatóan működik: ikon, nyilas gomb
-     vagy szövegre kattintás. A href no-JS fallbackként marad (ha a Cal nem töltődik be). */
+  /* ---------- Cal.com időpontfoglaló popup ---------- */
   document.addEventListener("click", function (e) {
     var el = e.target.closest("[data-cal-link]");
     if (!el) return;
-    if (typeof window.Cal !== "function") return; // Cal nincs betöltve → marad a href fallback
+    if (typeof window.Cal !== "function") return;
     e.preventDefault();
     e.stopImmediatePropagation();
     var link = el.getAttribute("data-cal-link");
@@ -140,9 +133,7 @@
     api("modal", { calLink: link, config: config });
   }, true);
 
-  /* ---------- Kapcsolati űrlap (Formspree) ----------
-     Az űrlap a <form action="..."> Formspree-végpontra küld (AJAX, oldalújratöltés nélkül).
-     Állítsd be a saját Formspree-azonosítódat az index.html <form action="..."> attribútumában. */
+  /* ---------- Kapcsolati űrlap (Formspree) ---------- */
   var form = document.getElementById("contactForm");
   var statusEl = document.getElementById("formStatus");
 
