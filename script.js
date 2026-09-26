@@ -115,13 +115,19 @@
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  /* ---------- Cal.com időpontfoglaló popup ---------- */
+  /* ---------- Cal.com időpontfoglaló popup (lazy: első kattintásra töltődik) ---------- */
+  var calInited = false;
   document.addEventListener("click", function (e) {
     var el = e.target.closest("[data-cal-link]");
     if (!el) return;
     if (typeof window.Cal !== "function") return;
     e.preventDefault();
     e.stopImmediatePropagation();
+    if (!calInited) {
+      window.Cal("init", "coaching", { origin: "https://cal.com" });
+      window.Cal.ns.coaching("ui", { hideEventTypeDetails: false, layout: "month_view" });
+      calInited = true;
+    }
     var link = el.getAttribute("data-cal-link");
     var ns = el.getAttribute("data-cal-namespace");
     var config = { layout: "month_view" };
